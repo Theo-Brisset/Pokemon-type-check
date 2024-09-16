@@ -15,7 +15,7 @@ if($connection !== null){
 
 $type = new Type(17);
 
-print_r($type);
+echo '<b>Type</b> : ' . $type->getTypeName() . ', <b>Resistances</b> : ' . $type->arrayToString($type->getResistances()) . ', <b>Weaknesses</b> : ' . $type->arrayToString($type->getWeaknesses());
 
 // use Application\Lib\Database\RequestType;
 

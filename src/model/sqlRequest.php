@@ -1,6 +1,8 @@
 <?php
 
-namespace Application\Lib\Database;
+namespace Application\Model\Database;
+
+use Application\Lib\Database\DataBaseConnection;
 
 abstract class SQLRequest{
     private ?\PDO $connection = null;
@@ -15,9 +17,12 @@ abstract class SQLRequest{
     protected function execute(string $query, array $params = []) : array {
         $stmt = $this->connection->prepare($query);
 
-        foreach($params as $key=>$value){
-            $stmt->bindParam($key, $value);
+        if(!empty($params)){
+            foreach($params as $key=>$value){
+                $stmt->bindParam($key, $value);
+            }
         }
+        
 
         $stmt->execute();
 

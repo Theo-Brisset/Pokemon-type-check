@@ -1,11 +1,13 @@
 <?php
 
-namespace Application\Lib\Database;
+namespace Application\Model\Database;
 
 class RequestType extends SQLRequest{
     private string $typeName ;
     private array $weaknesses = [];
     private array $resistances = [];
+    private float $id;
+    private string $img;
 
     public function executeQuery(array $params = []): array
     {
@@ -30,15 +32,27 @@ class RequestType extends SQLRequest{
         $this->weaknesses = array_unique($this->weaknesses);
         $this->resistances = array_unique($this->resistances);
 
+        $this->id = $results[0]['id'];
+
+        $this->img = $results[0]['image'];
+
         return $results;
     }
     
+    public function getTypeId() : float {
+        return $this->id;
+    }
+
     public function getTypeName() : string {
         return $this->typeName;
     }
 
     public function getWeaknesses() : array{
         return $this->weaknesses;
+    }
+
+    public function getTypeImg() : string {
+        return $this->img;
     }
 
     public function getResistances() : array{

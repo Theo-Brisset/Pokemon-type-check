@@ -1,3 +1,37 @@
 body{
-    background-color: red;
+    background-color: white;
+}
+
+main{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+}
+
+div.pokemonListe{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:50px;
+}
+
+div.pokemonCard{
+    width:20%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+    border-color: brown;
+    border-radius: 10px;
+}
+
+div.pokemonCard .pokemonImg{
+    width: 150px;
 }

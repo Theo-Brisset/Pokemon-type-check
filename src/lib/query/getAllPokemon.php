@@ -2,9 +2,7 @@
 
 namespace Application\Model\Database;
 
-include_once('src/lib/query/getAllPokemon.php');
 
-include_once('src/model/listePokemon.php');
 
 use Application\Model\Pokemon\Pokemon;
 

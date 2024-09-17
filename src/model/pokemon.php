@@ -2,8 +2,6 @@
 
 namespace Application\Model\Pokemon;
 
-include_once('src/model/pokemon.php');
-
 include_once('src/lib/query/getPokemonInfo.php');
 
 use Application\Model\Database\RequestPokemon;

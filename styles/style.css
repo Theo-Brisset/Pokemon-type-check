@@ -36,3 +36,24 @@ div.pokemonCard{
 div.pokemonCard .pokemonImg{
     width: 150px;
 }
+
+/*******************************
+********************************
+TYPEVSTYPE**********************
+********************************
+*******************************/
+
+form{
+    display: flex;
+    gap: 50px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+label input[type="radio"]:checked + img{
+    background-color: green;
+    border: solid 2px green;
+    border-radius: 3px;
+}

@@ -11,28 +11,28 @@ $title = "Liste des pokémons";
     <h1>Liste des pokémons disponibles</h1>
     <p>Voici les pokémons actuellements enregistrés sur le site, n'hésitez pas à en proposer !</p>
     <div class="pokemonListe" >
-    <?php 
-    
-    foreach($listePokemon as $pokemon){
-    ?>
+        <?php 
+        
+        foreach($listePokemon as $pokemon){
+        ?>
 
-    <div class="pokemonCard">
-        <h2><?php echo $pokemon->getPokemonName() ?></h2>
-        <img class="pokemonImg" src='<?= $pokemon->getPokemonImg() ?>'>
-        <ul>
-            <li><img src='<?= $pokemon->getType1()->getTypeImg() ?>'>
-            <?php if($pokemon->getType2() !== null)
-            { ?>
-                <li><img src='<?= $pokemon->getType2()->getTypeImg() ?>'>
-            <?php 
-            } ?>
-            
-        </ul>
-    </div>
+        <div class="pokemonCard">
+            <h2><?php echo $pokemon->getPokemonName() ?></h2>
+            <img class="pokemonImg" src='<?= $pokemon->getPokemonImg() ?>'>
+            <ul>
+                <li><img src='<?= $pokemon->getType1()->getTypeImg() ?>'>
+                <?php if($pokemon->getType2() !== null)
+                { ?>
+                    <li><img src='<?= $pokemon->getType2()->getTypeImg() ?>'>
+                <?php 
+                } ?>
+                
+            </ul>
+        </div>
 
-    <?php 
-    }
-    ?>
+        <?php 
+        }
+        ?>
     </div>
 </main>
 

@@ -6,8 +6,9 @@ include_once('src/lib/query/getAllPokemon.php');
 
 
 use Application\Model\Database\ListeRequest;
+use Application\Interface\Liste\Liste;
 
-class ListePokemon{
+class ListePokemon implements Liste {
 
     private array $listePokemon;
 
@@ -21,7 +22,7 @@ class ListePokemon{
 
     }
 
-    public function getListePokemon(){
+    public function getListe() : array {
         return $this->listePokemon;
     }
 

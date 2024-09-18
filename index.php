@@ -1,6 +1,7 @@
 <?php
 require_once('src/lib/database.php');
 include_once('src/controllers/homepage.php');
+include_once('src/controllers/typevstype.php');
 
 use Application\Lib\Database\DataBaseConnection;
 
@@ -23,6 +24,11 @@ switch ($page) {
         $controller->index();
         break;
 
+    case 'typevstype':
+        $controller = new TypevstypeController();
+        $controller->index();
+        break;
+        
     default:
         // Si la page demandée n'existe pas, afficher une erreur
         echo "404 Page non trouvée";

@@ -2,8 +2,6 @@
 
 namespace Application\Model\Database;
 
-
-
 use Application\Model\Pokemon\Pokemon;
 
 class ListeRequest extends SQLRequest

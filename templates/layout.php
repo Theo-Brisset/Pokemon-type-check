@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -7,6 +8,8 @@
    </head>
 
    <body>
+      <?php require_once('header.php'); ?>
+      <?= $header ?>
       <?= $content ?>
    </body>
 </html>

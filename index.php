@@ -1,5 +1,6 @@
 <?php
 require_once('src/lib/database.php');
+include_once('src/controllers/homepage.php');
 
 use Application\Lib\Database\DataBaseConnection;
 
@@ -10,11 +11,23 @@ try{
     print_r($errorMessage);
 }
 
-try{
-    include_once('src/controllers/homepage.php');
-} catch(Exception $e){
-    $errorMessage = $e->getMessage();
-    print_r($errorMessage);
-}
+define('BASE_URL', '/Pokemon-type-check');
+
+$url = trim($_SERVER['REQUEST_URI'], '/');
+
+$page = isset($_GET['page']) ? $_GET['page'] : 'homepage';
+
+switch ($page) {
+    case 'homepage':
+        $controller = new HomepageController();
+        $controller->index();
+        break;
+
+    default:
+        // Si la page demandée n'existe pas, afficher une erreur
+        echo "404 Page non trouvée";
+        break;
+    }
+
 
 ?>

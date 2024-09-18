@@ -1,8 +1,10 @@
-<?php
 
-use Application\Model\ListePokemon\ListePokemon;
+<?php 
 
- $title = "Liste des pokémons" ?>
+
+$title = "Liste des pokémons"; 
+
+?>
 
 <?php ob_start() ?>
 <main>
@@ -10,8 +12,7 @@ use Application\Model\ListePokemon\ListePokemon;
     <p>Voici les pokémons actuellements enregistrés sur le site, n'hésitez pas à en proposer !</p>
     <div class="pokemonListe" >
     <?php 
-    $listePokemon = new ListePokemon();
-    $listePokemon = $listePokemon->getListePokemon();
+    
     foreach($listePokemon as $pokemon){
     ?>
 

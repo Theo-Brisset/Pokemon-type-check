@@ -1,7 +1,8 @@
 <?php ob_start() ?>
 <ul>
-    <li><a href="">Liste des pokémons disponibles</a></li>
-    <li><a href="">Type vs type</li>
-    <li><a href="">Pokemon vs Pokemon</li>
+    <li><a href="/Pokemon-type-check/index.php?page=homepage">Homepage</a></li>
+    <li><a href="/Pokemon-type-check/index.php?page=typevstype">Type vs type</a></li>
+    <li><a href="/Pokemon-type-check/index.php?page=pokemonvspokemon">Pokemon vs pokemon</a></li>
+    <li><a href="/Pokemon-type-check/index.php?page=equipevsequipe">Equipe vs équipe</a></li>
 </ul>
-<?php $nav = ob_get_clean() ?>
+<?php $header = ob_get_clean() ?>

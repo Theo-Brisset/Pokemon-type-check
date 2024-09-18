@@ -2,6 +2,7 @@
 require_once('src/lib/database.php');
 include_once('src/controllers/homepage.php');
 include_once('src/controllers/typevstype.php');
+include_once('src/controllers/results/getResultTypevstype.php');
 
 use Application\Lib\Database\DataBaseConnection;
 
@@ -28,7 +29,12 @@ switch ($page) {
         $controller = new TypevstypeController();
         $controller->index();
         break;
-        
+
+    case 'resulttypevstype':
+        $controller = new VersusTypesController();
+        $controller->index();
+        break;
+
     default:
         // Si la page demandée n'existe pas, afficher une erreur
         echo "404 Page non trouvée";

@@ -15,11 +15,11 @@ class ListeTypeRequest extends SQLRequest{
         $results = $this->execute($request);
 
         foreach($results as $row){
-            $row = new Type($row['id']);
+            $row = new Type($row['type_id']);
             $this->listeTypes[] = $row;
         }
-
-        return $results;
+        
+        return $this->listeTypes;
     }
 
     public function getListeTypes() : array {

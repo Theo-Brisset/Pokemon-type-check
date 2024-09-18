@@ -5,7 +5,7 @@
 <main>
     <h1>Liste des types Pokémon</h1>
     <p>Choisissez un type puis cliquez sur un autre pour voir leur relation !</p>
-    <form action="" method="">
+    <form action="/Pokemon-type-check/index.php?page=resulttypevstype" method="POST">
         <fieldset>
             <h2>Type à tester</h2>
             <?php 

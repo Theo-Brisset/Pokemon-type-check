@@ -57,3 +57,13 @@ label input[type="radio"]:checked + img{
     border: solid 2px green;
     border-radius: 3px;
 }
+
+/*******************************
+********************************
+POKEMONVSPOKEMON****************
+********************************
+*******************************/
+
+form label.labelPokemon{
+    display:inline-block;
+}

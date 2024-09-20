@@ -26,8 +26,8 @@ class RequestType extends SQLRequest{
                     ";
 
         $results = $this->execute($request, $params);
+    
         
-
         $this->typeName = $results[0]['name'];
 
         foreach($results as $row){

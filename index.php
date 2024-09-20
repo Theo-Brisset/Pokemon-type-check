@@ -2,7 +2,9 @@
 require_once('src/lib/database.php');
 include_once('src/controllers/homepage.php');
 include_once('src/controllers/typevstype.php');
+include_once('src/controllers/pokemonvspokemon.php');
 include_once('src/controllers/results/getResultTypevstype.php');
+include_once('src/controllers/results/getResultPokemonvspokemon.php');
 
 use Application\Lib\Database\DataBaseConnection;
 
@@ -32,6 +34,16 @@ switch ($page) {
 
     case 'resulttypevstype':
         $controller = new VersusTypesController();
+        $controller->index();
+        break;
+
+    case 'pokemonvspokemon':
+        $controller = new PokemonvspokemonController();
+        $controller->index();
+        break;
+
+    case 'resultpokemonvspokemon':
+        $controller = new VersusPokemonController();
         $controller->index();
         break;
 

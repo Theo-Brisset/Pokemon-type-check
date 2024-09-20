@@ -3,11 +3,13 @@
 namespace Application\Model\Pokemon;
 
 include_once('src/lib/query/getPokemonInfo.php');
+include_once('src/model/type.php');
 
 use Application\Model\Database\RequestPokemon;
 use Application\Model\Type\Type;
 
 class Pokemon {
+    private float $id;
     private string $name;
     private Type $type1;
     private ?Type $type2;
@@ -17,6 +19,8 @@ class Pokemon {
     public function __construct(float $idPokemon){
         $pokemon = new RequestPokemon($idPokemon);
         $pokemon->executeQuery([':pokemon_id' => $idPokemon]);
+
+        $this->id = $pokemon->getId();
 
         $this->name = $pokemon->getPokemonName();
 
@@ -29,6 +33,10 @@ class Pokemon {
         $this->statistiques = $pokemon->getStatistiques();
 
         $this->img = $pokemon->getPokemonImg();
+    }
+
+    public function getId(){
+        return $this->id;
     }
 
     public function getPokemonName() : string{

@@ -6,6 +6,7 @@ class VersusPokemon {
 
     private float $result;
     private array $matchResult = [];
+    private string $advantage;
 
     public function __construct(float $pokemon, float $pokemonVs)
     {
@@ -36,6 +37,21 @@ class VersusPokemon {
                     ]; 
 
                 }
+            
+        switch(true){
+            case $this->result > 0 :
+                $this->advantage = "Le Pokémon " . $pokemon->getPokemonName() . " a l'avantage contre " . $pokemonVs->getPokemonName() ;
+                break;
+
+            case $this->result < 0 :
+                $this->advantage = "Le Pokémon " . $pokemonVs->getPokemonName() . " a l'avantage contre " . $pokemon->getPokemonName() ;
+                break;
+                
+            case $this->result == 0 :
+                $this->advantage = "Ni le Pokémon " . $pokemon->getPokemonName() . " ni le Pokémon " . $pokemonVs->getPokemonName() . " n'a l'avantage l'un contre l'autre. C'est à qui joue le mieux !" ;
+        }
+            
+
         }
 
     }
@@ -43,11 +59,11 @@ class VersusPokemon {
     private function convertMatchResultToValue(float $matchResult): float
     {
         if (($matchResult == 2) !== false) {
-            return 2.0;
-        } elseif (($matchResult == -2) !== false) {
-            return 0.5;
+            return -1;
+        } elseif (($matchResult == 0.5) !== false) {
+            return 1;
         }
-        return 1;
+        return 0;
     }
 
     public function getResult() : float{
@@ -56,6 +72,10 @@ class VersusPokemon {
 
     public function getMatchResult() : array{
         return $this->matchResult;
+    }
+
+    public function getAdvantage() : string{
+        return $this->advantage;
     }
 
 }

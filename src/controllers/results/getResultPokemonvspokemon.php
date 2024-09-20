@@ -4,6 +4,7 @@ include_once('src/interface/controllers.php');
 include_once('src/model/versus/versusPokemon.php');
 
 use Application\Interface\Controllers\Controllers;
+use Application\Model\Pokemon\Pokemon;
 
 class VersusPokemonController implements Controllers{
 
@@ -16,9 +17,15 @@ class VersusPokemonController implements Controllers{
 
             $pokemon = $_POST['pokemon'];
             $pokemonVs = $_POST['vspokemon'];
-            $result = new VersusPokemon($pokemon, $pokemonVs);
-            $matchResult = $result->getMatchResult();
-            $result = $result->getResult();
+            $match = new VersusPokemon($pokemon, $pokemonVs);
+
+            $pokemon = new Pokemon($pokemon);
+            $pokemonVs = new Pokemon($pokemonVs);
+            
+
+            $result = $match->getResult();
+            $matchResult = $match->getAdvantage();
+            $fullMatchResult = $match->getMatchResult();
         } catch(Exception $e){
             $errorMessage = $e->getMessage();
             print_r($errorMessage);

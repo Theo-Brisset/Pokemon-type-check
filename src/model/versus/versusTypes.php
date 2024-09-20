@@ -18,9 +18,9 @@ class VersusTypes {
         var_dump($typeVs->getTypeName());
 
         if(in_array($typeVs->getTypeName(), $weaknesses)){
-            $this->result = 'Le type ' . $type->getTypeName() . ' est faible face au type ' . $typeVs->getTypeName();
+            $this->result = 'Le type ' . $type->getTypeName() . ' reçoit double dégats par une attaque du type ' . $typeVs->getTypeName();
         } elseif(in_array($typeVs->getTypeName(), $resistances)){
-            $this->result = 'Le type ' . $type->getTypeName() . ' résiste face au type ' . $typeVs->getTypeName();
+            $this->result = 'Le type ' . $type->getTypeName() . ' reçoit la moitié des dégats par une attaque du type ' . $typeVs->getTypeName();
         } else {
             $this->result = 'Le type ' . $type->getTypeName() . ' reçoit des dégats neutre de la part du type ' . $typeVs->getTypeName();
         }

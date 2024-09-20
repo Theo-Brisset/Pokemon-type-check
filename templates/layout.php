@@ -11,5 +11,7 @@
       <?php require_once('header.php'); ?>
       <?= $header ?>
       <?= $content ?>
+      <?php require_once('footer.php'); ?>
+      <?= $footer ?>
    </body>
 </html>

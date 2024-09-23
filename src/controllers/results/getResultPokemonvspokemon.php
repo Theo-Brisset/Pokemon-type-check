@@ -20,7 +20,9 @@ class VersusPokemonController implements Controllers{
             $match = new VersusPokemon($pokemon, $pokemonVs);
 
             $pokemon = new Pokemon($pokemon);
+            $pokemon->setPokemonResult($match->pokemonSituation);
             $pokemonVs = new Pokemon($pokemonVs);
+            $pokemonVs->setPokemonResult($match->pokemonVsSituation);
             
 
             $result = $match->getResult();

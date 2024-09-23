@@ -7,6 +7,8 @@ class VersusPokemon {
     private float $result;
     private array $matchResult = [];
     private string $advantage;
+    public string $pokemonSituation;
+    public string $pokemonVsSituation;
 
     public function __construct(float $pokemon, float $pokemonVs)
     {
@@ -38,8 +40,6 @@ class VersusPokemon {
 
                 }
             
-        
-            
         }
         
 
@@ -60,14 +60,20 @@ class VersusPokemon {
     private function whichHasAdvantage(Pokemon $pokemon, Pokemon $pokemonVs){
         switch(true){
             case $this->result > 0 :
+                $this->pokemonSituation = 'winner';
+                $this->pokemonVsSituation = 'loser';
                 $this->advantage = "Le Pokémon " . $pokemon->getPokemonName() . " a l'avantage contre " . $pokemonVs->getPokemonName() ;
                 break;
 
             case $this->result < 0 :
+                $this->pokemonSituation = 'loser';
+                $this->pokemonVsSituation = 'winner';
                 $this->advantage = "Le Pokémon " . $pokemonVs->getPokemonName() . " a l'avantage contre " . $pokemon->getPokemonName() ;
                 break;
                 
             case $this->result == 0 :
+                $this->pokemonSituation = 'draw';
+                $this->pokemonVsSituation = 'draw';
                 $this->advantage = "Ni le Pokémon " . $pokemon->getPokemonName() . " ni le Pokémon " . $pokemonVs->getPokemonName() . " n'a l'avantage l'un contre l'autre. C'est à qui joue le mieux !" ;
         }
     }

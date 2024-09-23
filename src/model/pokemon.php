@@ -15,6 +15,7 @@ class Pokemon {
     private ?Type $type2;
     private float $statistiques;
     private string $img;
+    private string $result;
 
     public function __construct(float $idPokemon){
         $pokemon = new RequestPokemon($idPokemon);
@@ -61,6 +62,14 @@ class Pokemon {
 
     public function getPokemonImg() : string{
         return $this->img;
+    }
+
+    public function setPokemonResult(string $result) : void{
+        $this->result = $result;
+    }
+
+    public function getPokemonResult() : string{
+        return $this->result;
     }
 
 }

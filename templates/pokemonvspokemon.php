@@ -6,8 +6,10 @@
     <h1>Liste de Pokémon enregistrés</h1>
     <p>Choisissez un pokémon puis un autre pour voir lequel a l'avantage du type sur l'autre !</p>
     <form action="/Pokemon-type-check/index.php?page=resultpokemonvspokemon" method="POST">
-        <fieldset>
+    <button class="centerColumn" type="submit">Tester</button>
+        <fieldset class="leftColumn" required>
             <h2>Pokémon à tester</h2>
+            <div class="pokemonListe">
             <?php 
             foreach($listePokemons as $pokemon){
             ?>
@@ -29,14 +31,16 @@
             <?php 
             }
             ?>
+            </div>
         </fieldset>
-        <fieldset>
-            <h2>Contre quel pokémon ?</h2>           
+        <fieldset class="rightColumn" required>
+            <h2>Contre quel pokémon ?</h2>
+            <div class="pokemonListe rightColumn">           
             <?php 
             foreach($listePokemons as $pokemon){
             ?>
             
-            <label class="labelPokemon">
+            <label class="labelPokemon ">
                 <input type="radio" name="vspokemon" value="<?= $pokemon->getId(); ?>">
                 <img style="max-width:100px" src='<?= $pokemon->getPokemonImg() ?>' alt='<?= $pokemon->getPokemonName() ?>'>
                 <p><?= $pokemon->getPokemonName(); ?></p>
@@ -53,8 +57,9 @@
             <?php 
             }
             ?>
+            </div>
         </fieldset>
-        <button type="submit">Tester</button>
+        
     </form>
 </main>
 

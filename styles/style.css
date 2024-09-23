@@ -17,24 +17,25 @@ ul{
 }
 
 div.pokemonListe{
-    display:flex;
+    display:grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     flex-wrap: wrap;
     justify-content: center;
     gap:50px;
 }
 
 div.pokemonCard{
-    width:20%;
     display:flex;
     flex-direction: column;
     align-items: center;
     border-style: solid;
-    border-color: brown;
+    border-color: rgb(17, 17, 71);
     border-radius: 10px;
 }
 
 div.pokemonCard .pokemonImg{
-    width: 150px;
+    max-width: 110px;
 }
 
 /*******************************
@@ -44,8 +45,23 @@ TYPEVSTYPE**********************
 *******************************/
 
 form{
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    grid-template-rows: auto auto;
     gap: 50px;
+    width: 100%;
+}
+
+.leftColumn{
+    grid-column: 1;
+}
+
+.centerColumn{
+    grid-column: 2;
+}
+
+.rightColumn{
+    grid-column: 3;
 }
 
 input[type="radio"]{
@@ -66,4 +82,35 @@ POKEMONVSPOKEMON****************
 
 form label.labelPokemon{
     display:inline-block;
+}
+
+div.pokemonvspokemonResult{
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr;
+    gap:30px;
+    align-items: center;
+    color:white;
+}
+
+div.pokemonvspokemonResult > * {
+    width: auto;
+}
+
+
+div.winner{
+    background-color: rgb(39, 102, 39);
+}
+
+div.loser{
+    background-color: rgb(173, 35, 35);
+}
+
+div.draw{
+    background-color: rgb(90, 90, 90);
+}
+
+div.arrow{
+    color:black;
+    font-size: 3em;
+    text-align: center;
 }

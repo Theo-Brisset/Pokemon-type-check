@@ -1,5 +1,21 @@
-body{
-    background-color: white;
+:root{
+    --primary-color:#E85F5C ;
+    --secondary-color: #8DA9C4;
+    --tertiary-color: #7EE081;
+    --black-color: #030301;
+    --neutral-color:#5A5A66 ;
+}
+
+p, h1, h2, h3, h4, a{
+    color: var(--black-color);
+}
+
+*{
+    box-sizing: border-box;
+    margin:0px;
+    padding:0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
 }
 
 main{
@@ -16,27 +32,11 @@ ul{
     padding-left:0;
 }
 
-div.pokemonListe{
-    display:grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    flex-wrap: wrap;
-    justify-content: center;
-    gap:50px;
+a{
+    text-decoration: none;
 }
 
-div.pokemonCard{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    border-style: solid;
-    border-color: rgb(17, 17, 71);
-    border-radius: 10px;
-}
 
-.pokemonImg{
-    max-width: 110px;
-}
 
 /*******************************
 ********************************
@@ -45,6 +45,13 @@ HEADER**********************
 *******************************/
 
 header{
+    background-color: var(--primary-color);
+    padding: 50px;
+    position: relative;
+    margin-bottom: 8vh;
+}
+
+header > div{
     width: 80%;
     margin: auto;
     display: flex;
@@ -56,7 +63,8 @@ header{
 .websiteName{
     font-size: 3em;
     font-weight: 1000;
-    line-height: 0em;
+    line-height: 1em;
+    
 }
 
 header p{
@@ -67,6 +75,107 @@ header nav ul{
     font-size: 1.5em;
     gap:30px;
 }
+
+header nav ul li a, header div.logo p{
+    color: white;
+}
+
+header nav ul li a{
+    border-bottom: 2px solid transparent;
+}
+
+header nav ul li a:hover{
+    font-size:1.1em;
+    transition: 0.2s;
+    color:white;
+    border-bottom: 2px solid white;
+}
+
+header img.pokeball{
+    position: absolute;
+    bottom:-15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/*******************************
+********************************
+HOMEPAGE**********************
+********************************
+*******************************/
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+}
+
+
+main > p{
+    display: inline-block;
+    max-width: 800px;
+    font-size: 1.1em;
+    line-height: 2em;
+}
+
+main > div{
+    display: flex;
+    gap:50px;
+}
+
+a.button{
+    display: inline-block;
+    background-color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px;
+    border-radius: 10px;
+    color:white;
+    min-width: 300px;
+}
+
+a.button:hover, a.button2:hover{
+    background-color: var(--primary-color);
+    transition: 0.2s;
+}
+
+a.button2{
+    background-color: var(--tertiary-color);
+}
+
+div.pokemonListe{
+    display:grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:50px;
+}
+
+div.pokemonCard{
+    min-height: 250px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    border-style: solid;
+    border-color: var(--black-color);
+    border-radius: 10px;
+    box-shadow:var(--neutral-color) 5px 5px 1px;
+}
+
+div.pokemonCard:hover{
+    border-color: var(--primary-color);
+    box-shadow: var(--primary-color) 5px 5px 1px;
+    transition: 0.4s;
+}
+
+.pokemonImg{
+    max-width: 110px;
+}
+
 
 /*******************************
 ********************************

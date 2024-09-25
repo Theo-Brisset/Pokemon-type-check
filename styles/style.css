@@ -34,8 +34,38 @@ div.pokemonCard{
     border-radius: 10px;
 }
 
-div.pokemonCard .pokemonImg{
+.pokemonImg{
     max-width: 110px;
+}
+
+/*******************************
+********************************
+HEADER**********************
+********************************
+*******************************/
+
+header{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    gap:50px;
+}
+
+.websiteName{
+    font-size: 3em;
+    font-weight: 1000;
+    line-height: 0em;
+}
+
+header p{
+    text-align: center;
+}
+
+header nav ul{
+    font-size: 1.5em;
+    gap:30px;
 }
 
 /*******************************

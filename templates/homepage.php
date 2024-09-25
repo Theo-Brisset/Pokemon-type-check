@@ -8,7 +8,7 @@ $title = "Liste des pokémons";
 
 <?php ob_start() ?>
 <main>
-    <h1>Liste des pokémons disponibles</h1>
+    <h2>Liste des pokémons disponibles</h2>
     <p>Voici les pokémons actuellements enregistrés sur le site, n'hésitez pas à en proposer !</p>
     <div class="pokemonListe" >
         <?php 
@@ -26,7 +26,6 @@ $title = "Liste des pokémons";
                     <li><img src='<?= $pokemon->getType2()->getTypeImg() ?>'>
                 <?php 
                 } ?>
-                
             </ul>
         </div>
 

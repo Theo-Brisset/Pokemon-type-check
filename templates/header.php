@@ -4,7 +4,7 @@
         <a href="/Pokemon-type-check/index.php?page=homepage">
             <div class="logo">
                 <p class="websiteName">PokéCheck</p>
-                <p>Check relationships between poké-types to compose your teams!</p>
+                <p>Check relationships between poké-types to create the best team!</p>
             </div>
         </a>
         <nav aria-label="Main navigation">

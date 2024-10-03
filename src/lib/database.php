@@ -18,7 +18,12 @@ class DataBaseConnection {
 
     public function getConnection() : \PDO {
         if($this->database === null){
-            $this->database = new \PDO('mysql:host=mysql-brisset-theo.alwaysdata.net;port=3306;dbname=brisset-theo_pokemon;charset=utf8', '343614_brisset',  'fcad2024!');
+            try{
+                $this->database = new \PDO('mysql:host=mysql-brisset-theo.alwaysdata.net;port=3306;dbname=brisset-theo_pokemon;charset=utf8', '343614_brisset',  'fcad2024!');
+            } catch (\PDOException  $e){
+                die('Erreur de connexion à la base de données : ' . $e->getMessage());
+            }
+                
         }
 
         return $this->database ;

@@ -5,7 +5,7 @@
 <main>
     <h1>Liste de Pokémon enregistrés</h1>
     <p>Choisissez un pokémon puis un autre pour voir lequel a l'avantage du type sur l'autre !</p>
-    <form action="/Pokemon-type-check/index.php?page=resultpokemonvspokemon" method="POST">
+    <form action="/Pokemon-type-check/index.php?page=resultpokemonvspokemon" method="POST" class="pokemonvspokemon">
     <button class="centerColumn" type="submit">Tester</button>
         <fieldset class="leftColumn" >
             <h2>Pokémon à tester</h2>

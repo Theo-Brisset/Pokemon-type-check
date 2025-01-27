@@ -5,6 +5,7 @@ include_once('src/controllers/typevstype.php');
 include_once('src/controllers/pokemonvspokemon.php');
 include_once('src/controllers/results/getResultTypevstype.php');
 include_once('src/controllers/results/getResultPokemonvspokemon.php');
+include_once('src/controllers/addPokemon.php');
 
 use Application\Lib\Database\DataBaseConnection;
 
@@ -44,6 +45,10 @@ switch ($page) {
 
     case 'resultpokemonvspokemon':
         $controller = new VersusPokemonController();
+        $controller->index();
+        break;
+    case 'addPokemon':
+        $controller = new AddPokemonController();
         $controller->index();
         break;
 

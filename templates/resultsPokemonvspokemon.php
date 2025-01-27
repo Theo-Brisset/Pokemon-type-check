@@ -3,9 +3,10 @@
 <?php ob_start() ?>
 
 <main>
+    <h2><?= $matchResult ?></h2>
     <div class="pokemonvspokemonResult">
         <div class="pokemonCard <?= $pokemon->getPokemonResult() ?> leftColumn">
-            <h2><?= $pokemon->getPokemonName() ?></h2>
+            <h2 class="white-text"><?= $pokemon->getPokemonName() ?></h2>
             <img src="<?= $pokemon->getPokemonImg() ?>">
             <ul>
                 <li><img src='<?= $pokemon->getType1()->getTypeImg() ?>'>
@@ -26,7 +27,7 @@
             <?php } ?>
         </div>
         <div class="pokemonCard <?= $pokemonVs->getPokemonResult() ?> rightColumn">
-            <h2><?= $pokemonVs->getPokemonName() ?></h2>
+            <h2 class="white-text"><?= $pokemonVs->getPokemonName() ?></h2>
             <img src="<?= $pokemonVs->getPokemonImg() ?>">
             <ul>
                 <li><img src='<?= $pokemonVs->getType1()->getTypeImg() ?>'>
@@ -38,16 +39,25 @@
             </ul>
         </div>
     </div>
-    <?= $matchResult ?>
+    
     <?php foreach($fullMatchResult as $match) 
     {
     ?>
-    <p>Quand le type <?php echo '<img src="'. $match['type']->getTypeImg() . '">' ?>  est attaqué par une attaque du type <?php echo '<img src="' . $match['typeVs']->getTypeImg() . '">' ?>, il prend des dégats multiplié par <?php echo $match['result'] ?></p>
-
+        <p>
+            <?php echo '<img src="'. $match['type']->getTypeImg() . '">' ?>  
+            <?php 
+                if($match['result'] == 0.5){
+                    echo '→'; 
+                } if($match['result'] == 1){
+                    echo '='; 
+                } if($match['result'] == 2){
+                    echo '←'; 
+                } ?> 
+            <?php echo '<img src="' . $match['typeVs']->getTypeImg() . '">' ?>
+        </p>
     <?php 
     } 
     ?>
-    <?= $result ?>
 </main>
 
 

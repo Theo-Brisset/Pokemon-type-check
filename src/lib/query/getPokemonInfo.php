@@ -13,7 +13,7 @@ class RequestPokemon extends SQLRequest
 
     public function executeQuery(array $params = []): array
     {
-        $request = "SELECT p.name, p.type_1, p.type_2, p.statistiques, p.img, p.id
+        $request = "SELECT p.name, p.type_1, p.type_2, p.statistiques, p.img, p.id 
         FROM `pokemon` AS p
         WHERE p.id = :pokemon_id
         ";

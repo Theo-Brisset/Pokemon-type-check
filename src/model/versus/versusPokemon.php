@@ -62,19 +62,19 @@ class VersusPokemon {
             case $this->result > 0 :
                 $this->pokemonSituation = 'winner';
                 $this->pokemonVsSituation = 'loser';
-                $this->advantage = "Le Pokémon " . $pokemon->getPokemonName() . " a l'avantage contre " . $pokemonVs->getPokemonName() ;
+                $this->advantage = $pokemon->getPokemonName() . " has the advantage against " . $pokemonVs->getPokemonName() ;
                 break;
 
             case $this->result < 0 :
                 $this->pokemonSituation = 'loser';
                 $this->pokemonVsSituation = 'winner';
-                $this->advantage = "Le Pokémon " . $pokemonVs->getPokemonName() . " a l'avantage contre " . $pokemon->getPokemonName() ;
+                $this->advantage = $pokemonVs->getPokemonName() . " has the advantage against " . $pokemon->getPokemonName() ;
                 break;
                 
             case $this->result == 0 :
                 $this->pokemonSituation = 'draw';
                 $this->pokemonVsSituation = 'draw';
-                $this->advantage = "Ni le Pokémon " . $pokemon->getPokemonName() . " ni le Pokémon " . $pokemonVs->getPokemonName() . " n'a l'avantage l'un contre l'autre. C'est à qui joue le mieux !" ;
+                $this->advantage = "Neither " . $pokemon->getPokemonName() . " nor " . $pokemonVs->getPokemonName() . " has the avdantage. It's a skill-based match-up !" ;
         }
     }
 

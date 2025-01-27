@@ -5,8 +5,8 @@
 <main>
     <h1>Liste des types Pokémon</h1>
     <p>Choisissez un type puis cliquez sur un autre pour voir leur relation !</p>
-    <form action="/Pokemon-type-check/index.php?page=resulttypevstype" method="POST">
-        <fieldset>
+    <form action="/Pokemon-type-check/index.php?page=resulttypevstype" method="POST" class="typevstype">
+        <fieldset class="leftColumn">
             <h2>Type à tester</h2>
             <?php 
             foreach($listeTypes as $type){
@@ -14,14 +14,14 @@
             
             <label>
                 <input type="radio" name="type" value="<?= $type->getTypeId(); ?>">
-                <img src='<?= $type->getTypeImg() ?>' alt='<?= $type->getTypeName() ?>'>
+                <img src='<?= $type->getTypeImg() ?>' title='<?= $type->getTypeName() ?>' alt='<?= $type->getTypeName() ?>'>
             </label>
             
             <?php 
             }
             ?>
         </fieldset>
-        <fieldset>
+        <fieldset class="rightColumn">
             <h2>Contre quel type ?</h2>           
             <?php 
             foreach($listeTypes as $type){
@@ -36,7 +36,7 @@
             }
             ?>
         </fieldset>
-        <button type="submit">Tester</button>
+        <button class="centerColumn" type="submit">Tester</button>
     </form>
 </main>
 

@@ -183,7 +183,7 @@ main > div{
     gap:50px;
 }
 
-a.button{
+a.button, button[type='submit']{
     display: inline-block;
     background-color: var(--secondary-color);
     text-align: center;
@@ -194,13 +194,17 @@ a.button{
     min-width: 300px;
 }
 
-a.button:hover, a.addPokemon:hover{
+a.button:hover, a.addPokemon:hover, button[type='submit']:hover{
     background-color: var(--primary-color);
     transition: 0.2s;
 }
 
-a.addPokemon{
+a.addPokemon, button[type='submit']{
     background-color: var(--tertiary-color);
+}
+
+button[type='submit']{
+    border:none;
 }
 
 div.pokemonListe{
